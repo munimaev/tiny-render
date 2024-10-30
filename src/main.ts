@@ -28,7 +28,7 @@ createRoot("#app").render([
         {
           tag: "a",
           props: {
-            href: "/play.html",
+            href: "./play.html",
             target: "_self",
             children: { tag: "i", props: { children: "play room" } },
           },
