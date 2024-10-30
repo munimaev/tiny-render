@@ -1,10 +1,6 @@
 import "./style.css";
 import { createRoot } from "./TinyRender";
 
-document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
-  <div>Empty page</div>
-`;
-
 createRoot("#app").render([
   {
     tag: "h2",

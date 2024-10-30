@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mini Famework</title>
+    <link rel="stylesheet" href="./play.css">
+  </head>
+  <body>
+    <div id="app" class="grid">
+      <div id="polygon"></div>
+      <div id="selectors" class="buttons"></div>
+      <div class="buttons">
+        <button id="apply">Render</button>
+      </div>
+
+      <fieldset>
+        <legend>Current</legend>
+            <pre id="before"></pre>
+      </fieldset>
+
+      <fieldset>
+        <legend>Will be render</legend>
+            <pre id="after"></pre>
+      </fieldset>
+        
+    </div>
+    <script type="module" src="/src/play.ts"></script>
+  </body>
+</html>
