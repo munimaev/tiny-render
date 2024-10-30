@@ -4,19 +4,21 @@ import type {
   TextSchema,
   ElementProps,
 } from "./types.ts";
-import PropsProcessor from "./PropsProcessor.ts";
+import ProcessorController from "./ProcessorController.ts";
 
 class NodeCreator {
-  private propsProcessor: PropsProcessor;
+  private propsProcessor: ProcessorController;
 
-  constructor(propPrcsr: PropsProcessor) {
+  constructor(propPrcsr: ProcessorController) {
     this.propsProcessor = propPrcsr;
   }
 
   createThree(root: Element, schema: NodeSchema[] | NodeSchema): Element {
-    root.innerHTML = "";
     const elements = this.createNodesArray(schema);
-    elements.forEach((el) => root.appendChild(el));
+    elements.forEach((el) => {
+      root.appendChild(el);
+    });
+
     return root;
   }
 
@@ -24,6 +26,7 @@ class NodeCreator {
     if (Array.isArray(schema)) {
       return schema.map((item) => this.createNode(item));
     }
+
     return [this.createNode(schema)];
   }
 
@@ -31,14 +34,15 @@ class NodeCreator {
     if (schema && typeof schema === "object") {
       return this.createElementNode(schema);
     }
+
     return this.createTextNode(schema);
   }
 
   createElementNode(schema: ElementSchema): Node {
     const element = document.createElement(schema.tag);
-    this.childrenProcessing(element, schema.props);
-    this.propsProcessor.applyAll(element, schema.props);
-    return element;
+    const noChildrenProps = this.childrenProcessing(element, schema.props);
+
+    return this.propsProcessor.applyAllProcessor(element, noChildrenProps);
   }
 
   childrenProcessing(
@@ -52,6 +56,7 @@ class NodeCreator {
     const propsCopy = { ...props };
     this.createThree(element, propsCopy.children);
     delete propsCopy.children;
+
     return propsCopy;
   }
 
@@ -63,6 +68,7 @@ class NodeCreator {
     ) {
       content = String(schema);
     }
+
     return document.createTextNode(content);
   }
 }

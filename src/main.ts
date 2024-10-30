@@ -59,6 +59,7 @@ createRoot("#app").render([
         0,
         "",
         -0,
+        "✨",
       ],
     },
   },
