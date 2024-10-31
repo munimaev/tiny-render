@@ -39,6 +39,17 @@ createRoot("#app").render([
   },
   {
     tag: "hr",
+    props: {},
+  },
+  {
+    tag: "img",
+    props: {
+      src: "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_640.jpg",
+      height: "100px",
+    },
+  },
+  {
+    tag: "hr",
   },
   {
     tag: "div",

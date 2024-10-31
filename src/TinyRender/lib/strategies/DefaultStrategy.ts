@@ -11,7 +11,6 @@ class DefaultStrategy implements Strategy {
   }
 
   compareAndReplace(parent: Node, realNode?: Node, virtNode?: Node): void {
-    console.log("COMPARE", 13, [realNode, virtNode]);
     if (realNode && virtNode) {
       if (this.isNodeEqual(realNode, virtNode)) {
         this.update(realNode, virtNode);

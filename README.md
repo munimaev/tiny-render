@@ -65,3 +65,10 @@ TinyRender supports two ways to extend functionality:
    ```
    app.domUpdater.setStrategy(yourStrategy);
    ```
+
+## Potential Improvements
+
+- __Schema Validation__: Implement validation to check the integrity of the configuration schema.
+- __Testing__: Add test coverage to ensure the framework’s stability.
+- __Event Handling__: Add built-in support for additional event handlers such as `onClick`, `onChange`, etc.
+- __State Management__: Integrate a lightweight state management option to handle more complex, state-driven UI updates.

@@ -36,7 +36,7 @@ class TinyRender {
 function createRoot(selector: string): TinyRender {
   const element = document.querySelector(selector);
   if (!element) {
-    throw Error(`There is now element for root with [${selector}] slector`);
+    throw Error(`There is no element for root with a [${selector}] selector`);
   }
   const tynyRender = new TinyRender(element);
 
