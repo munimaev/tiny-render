@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "build-gh": "tsc && vite build --base=/tiny-render/"
+    "build-gh": "tsc && vite build --base=/tiny-render/ --outDir=docs"
   },
   "devDependencies": {
     "typescript": "~5.6.2",
