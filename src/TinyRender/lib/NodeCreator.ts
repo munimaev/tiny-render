@@ -4,12 +4,12 @@ import type {
   TextSchema,
   ElementProps,
 } from "./types.ts";
-import ProcessorController from "./ProcessorController.ts";
+import PropsManager from "./PropsManager.ts";
 
 class NodeCreator {
-  private propsProcessor: ProcessorController;
+  private propsProcessor: PropsManager;
 
-  constructor(propPrcsr: ProcessorController) {
+  constructor(propPrcsr: PropsManager) {
     this.propsProcessor = propPrcsr;
   }
 

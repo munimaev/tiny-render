@@ -2,7 +2,7 @@ import type { ElementProps } from "./types.ts";
 import { Processor, ApplyArguments } from "./processors/processorTypes.ts";
 import DefaultProcessor from "./processors/DefaultProcessor.ts";
 
-class ProcessorController {
+class PropsManager {
   private processors: Processor[] = [];
   private defaultProcessor: DefaultProcessor;
 
@@ -25,4 +25,4 @@ class ProcessorController {
   }
 }
 
-export default ProcessorController;
+export default PropsManager;

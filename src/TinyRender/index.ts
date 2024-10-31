@@ -1,5 +1,5 @@
 import type { NodeSchema } from "./lib/types.ts";
-import ProcessorController from "./lib/ProcessorController.ts";
+import PropsManager from "./lib/PropsManager.ts";
 import NodeCreator from "./lib/NodeCreator.ts";
 import DomUpdater from "./lib/DomUpdater.ts";
 import DefaultStrategy from "./lib/strategies/DefaultStrategy.ts";
@@ -8,7 +8,7 @@ import StyleProcessor from "./lib/processors/StyleProcessor.ts";
 class TinyRender {
   private root: Element;
   private virtualRoot: Element;
-  public propProcessor: ProcessorController;
+  public propManager: PropsManager;
   private nodeCreator: NodeCreator;
   public domUpdater: DomUpdater;
 
@@ -16,10 +16,10 @@ class TinyRender {
     this.root = element;
     this.virtualRoot = document.createElement("div");
 
-    this.propProcessor = new ProcessorController();
-    this.propProcessor.addProcessor(new StyleProcessor());
+    this.propManager = new PropsManager();
+    this.propManager.addProcessor(new StyleProcessor());
 
-    this.nodeCreator = new NodeCreator(this.propProcessor);
+    this.nodeCreator = new NodeCreator(this.propManager);
 
     this.domUpdater = new DomUpdater(this.root, new DefaultStrategy());
   }
