@@ -97,7 +97,7 @@ const data: Record<string, any> = {
               tag: "b",
               props: {
                 children: "WORLD!",
-                style: "color:darkblue; text-transform: italic",
+                style: "color:darkblue; text-transform: lowercase;",
               },
             },
           ],
